@@ -59,5 +59,5 @@ Given('I have article titled {string}') do |string|
 end
 
 Then('I should see {string} with {string}') do |string, string2|
-   
+   page.should have_content(string2)
 end
