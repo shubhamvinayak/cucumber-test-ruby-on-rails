@@ -33,5 +33,14 @@ Then I should see "Article was successfully updated"
 And I should see "Spuds edited"
 And I should see "Delicious potato wedges edited"
 And I am on the list of articles
-# But I should not see "The visitors"
+But I should not see "The visitors"
 
+Scenario: Delete Article
+Given I have a article titled "The visitors", "shubham"
+And I am on the list of the articles
+And I have articles
+When I press first "Destroy"
+Then I should see "Article was successfully destroyed"
+And I should see "shubham"
+And I should not see "The visitors"
+And I should have 1 article

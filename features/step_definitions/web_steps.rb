@@ -44,3 +44,12 @@ end
 Then('I am on the list of articles') do
   visit articles_path
 end
+
+
+Given('I have articles') do
+ Article.all
+end
+
+When('I press first {string}') do |string|
+ click_link(string, match: :first)
+end
