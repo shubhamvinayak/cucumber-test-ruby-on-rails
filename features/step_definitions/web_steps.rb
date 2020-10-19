@@ -53,3 +53,11 @@ end
 When('I press first {string}') do |string|
  click_link(string, match: :first)
 end
+
+Given('I have article titled {string}') do |string|
+  Article.create(title: string)
+end
+
+Then('I should see {string} with {string}') do |string, string2|
+   
+end

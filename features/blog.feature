@@ -44,3 +44,11 @@ Then I should see "Article was successfully destroyed"
 And I should see "shubham"
 And I should not see "The visitors"
 And I should have 1 article
+
+Scenario: Show article
+Given I have article titled "The visitors"
+And I am on the list of articles
+And I have articles
+When I press first "Show"
+Then I should see "Title" with "The visitors"
+
