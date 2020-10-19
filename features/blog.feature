@@ -22,3 +22,16 @@ And I should see "Spuds"
 And I should see "Delicious potato wedges"
 And I should have 1 article
 
+Scenario: Edit Article
+Given I have a article titled "The visitors", "shubham"
+And I am on the list of the articles
+When I follow "Edit"
+And I fill in "Title" with "Spuds edited"
+And I fill in "Description" with "Delicious potato wedges edited"
+And I press "Update Article"
+Then I should see "Article was successfully updated"
+And I should see "Spuds edited"
+And I should see "Delicious potato wedges edited"
+And I am on the list of articles
+# But I should not see "The visitors"
+

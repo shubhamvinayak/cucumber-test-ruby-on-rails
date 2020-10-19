@@ -20,7 +20,8 @@ Given('I am on the list of the articles') do
 end
 
 When('I follow {string}') do |arg1|
-  click_link arg1
+  #click_link arg1
+  click_link(arg1, match: :first)
 end
 
 When('I fill in {string} with {string}') do |field, value|
@@ -34,4 +35,12 @@ end
 
 Then('I should have {int} article') do |count|
   Article.count.should == count.to_i
+end
+
+Then('I should not see {string}') do |string|
+ page.should_not have_content(string)
+end
+
+Then('I am on the list of articles') do
+  visit articles_path
 end
